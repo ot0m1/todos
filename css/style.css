@@ -1,0 +1,101 @@
+body {
+  background-color: #d3d3d3;
+}
+
+#container {
+  width: 50%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#app form {
+  margin-bottom: 15px;
+}
+
+#app form input[type="text"] {
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 4px 4px;
+  box-sizing: border-box;
+  border: 1px solid #a9a9a9;
+  border-radius: 3px;
+}
+
+#app form input[type="submit"] {
+  display: inline;
+  cursor: pointer;
+  border: 1px solid #a9a9a9;
+  background-color: #dcdcdc;
+}
+
+#app form input[type="submit"]:hover {
+  border: 1px solid #808080;
+  background-color: #d3d3d3;
+}
+
+#app ul {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#app li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 4px;
+  margin: 5px 0 10px 0;
+  background-color: #c0c0c0;
+  border-radius: 3px;
+  border: 1px solid #a9a9a9;
+}
+
+#app li span {
+  /* margin-bottom: 6px; */
+}
+
+#app li span.done {
+  color: #808080;
+}
+
+#app li button {
+  margin: 4px 8px 2px 0;
+  cursor: pointer;
+  border: 1px solid #a9a9a9;
+  background-color: #dcdcdc;
+}
+
+#app li button:hover {
+  border: 1px solid #808080;
+  background-color: #d3d3d3;
+}
+
+#app li form {
+  margin-bottom: 0;
+}
+
+#app li input[type="text"] {
+  margin-bottom: 2px;
+}
+
+#app li input[type="checkbox"] {
+  cursor: pointer;
+  margin-right: 6px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #a9a9a9;
+  background-color: #dcdcdc;
+  vertical-align: -1.7px;
+}
+
+.button-cancel {
+  margin-left: 8px !important;
+}
