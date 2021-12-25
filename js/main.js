@@ -3,8 +3,7 @@ const vm = Vue.createApp({
     return {
       todos: [],
       newTodo: '',
-      editedTodo: '',
-      MessageIfNone: 'Notnig To do.'
+      editedTodo: ''
     }
   },
   watch: {
