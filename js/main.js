@@ -3,7 +3,8 @@ const vm = Vue.createApp({
     return {
       todos: [],
       newTodo: '',
-      editedTodo: ''
+      editedTodo: '',
+      editingIndex: null
     }
   },
   mounted: function () {
@@ -11,21 +12,21 @@ const vm = Vue.createApp({
   },
   methods: {
     addItem () {
-      const item = { title: this.newTodo, isDone: false , editable: false}
+      const item = { title: this.newTodo, isDone: false}
       this.todos.push(item)
       this.newTodo = ''
       this.save()
     },
     startEditing (index) {
-      this.todos[index].editable = true 
+      this.editingIndex = index
     },
     editItem (index) {
       this.todos[index].title = this.editedTodo
-      this.todos[index].editable = false
+      this.editingIndex = null
       this.save()
     },
     cancelEditing (index) {
-      this.todos[index].editable = false
+      this.editingIndex = null
     },
     deleteItem (index) {
       if (confirm('Are you sure?')) {

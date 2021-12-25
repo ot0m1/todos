@@ -17,7 +17,7 @@
           </form>
           <ul>
             <li v-for="(todo, index) in todos" :key="todo.title">
-              <template v-if="!todo.editable">
+              <template v-if="index !== editingIndex">
                 <input type="checkbox" v-model="todo.isDone">
                 <span :class="{done: todo.isDone}">{{ todo.title }}</span>
                 <br>
