@@ -25,7 +25,7 @@ const vm = Vue.createApp({
       this.editingIndex = null
       this.save()
     },
-    cancelEditing (index) {
+    cancelEditing () {
       this.editingIndex = null
     },
     deleteItem (index) {
