@@ -34,7 +34,7 @@ const vm = Vue.createApp({
         this.save()
       }
     },
-    save () {
+    saveItem () {
       localStorage.setItem('todos', JSON.stringify(this.todos))
     }
   }
