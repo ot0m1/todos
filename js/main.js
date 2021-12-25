@@ -34,7 +34,7 @@ const vm = Vue.createApp({
     cancelEditing (index) {
       this.todos[index].editable = false
     },
-    deleteItem  (index) {
+    deleteItem (index) {
       if (confirm('Are you sure?')) {
         this.todos.splice(index, 1)
       }
