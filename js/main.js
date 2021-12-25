@@ -6,14 +6,6 @@ const vm = Vue.createApp({
       editedTodo: ''
     }
   },
-  watch: {
-    todos: {
-      handler: function () {
-        localStorage.setItem('todos', JSON.stringify(this.todos))
-      },
-      deep: true
-    }
-  },
   mounted: function () {
     this.todos = JSON.parse(localStorage.getItem('todos')) || []
   },
@@ -22,6 +14,7 @@ const vm = Vue.createApp({
       const item = { title: this.newTodo, isDone: false , editable: false}
       this.todos.push(item)
       this.newTodo = ''
+      this.save()
     },
     startEditing (index) {
       this.todos[index].editable = true 
@@ -29,6 +22,7 @@ const vm = Vue.createApp({
     editItem (index) {
       this.todos[index].title = this.editedTodo
       this.todos[index].editable = false
+      this.save()
     },
     cancelEditing (index) {
       this.todos[index].editable = false
@@ -36,7 +30,11 @@ const vm = Vue.createApp({
     deleteItem (index) {
       if (confirm('Are you sure?')) {
         this.todos.splice(index, 1)
+        this.save()
       }
+    },
+    save () {
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     }
   }
 }).mount('#app')
