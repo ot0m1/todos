@@ -15,7 +15,7 @@ const vm = Vue.createApp({
       const item = { title: this.newTodo, isDone: false}
       this.todos.push(item)
       this.newTodo = ''
-      this.save()
+      this.saveItem()
     },
     startEditing (index) {
       this.editingIndex = index
@@ -23,7 +23,7 @@ const vm = Vue.createApp({
     editItem (index) {
       this.todos[index].title = this.editedTodo
       this.editingIndex = null
-      this.save()
+      this.saveItem()
     },
     cancelEditing () {
       this.editingIndex = null
@@ -31,7 +31,7 @@ const vm = Vue.createApp({
     deleteItem (index) {
       if (confirm('Are you sure?')) {
         this.todos.splice(index, 1)
-        this.save()
+        this.saveItem()
       }
     },
     saveItem () {
