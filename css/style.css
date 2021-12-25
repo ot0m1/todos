@@ -58,10 +58,6 @@ h1 {
   border: 1px solid #a9a9a9;
 }
 
-#app li span {
-  /* margin-bottom: 6px; */
-}
-
 #app li span.done {
   color: #808080;
 }
