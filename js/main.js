@@ -27,7 +27,6 @@ const vm = Vue.createApp({
       this.todos[index].editable = true 
     },
     editItem (index) {
-      console.log(this.editedTodo)
       this.todos[index].title = this.editedTodo
       this.todos[index].editable = false
     },
