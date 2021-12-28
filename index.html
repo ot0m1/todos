@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header"><h1>Todos</h1></div>
+      <div id="body">
+        <div id="app">
+          <form @submit.prevent="addItem">
+            <input type="text" v-model="newTodo" required>
+            <input type="submit" value="Add">
+          </form>
+          <ul>
+            <li v-for="(todo, index) in todos" :key="todo.title">
+              <template v-if="index !== editingIndex">
+                <input type="checkbox" v-model="todo.isDone">
+                <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+                <br>
+                <button @click="startEditing(index)">Edit</button>
+                <button @click="deleteItem(index)">Delete</button>
+              </template>
+              <template v-else>
+                <form @submit.prevent="editItem(index)">
+                  <input type="text" v-bind:value="todo.title" v-on:input="editedTodo = $event.target.value">
+                  <input type="submit" value="OK">
+                  <button class="button-cancel" @click="cancelEditing(index)">Cancel</button>
+                  </form>
+              </template>
+            </li>
+            <li v-show="!todos.length">Notnig To do.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
